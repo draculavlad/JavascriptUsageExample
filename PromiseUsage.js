@@ -12,5 +12,6 @@ addToSequenceChain(sequence, Promise.all(arr.map(v => console.log(v.a))))
 let dataArr = ['a','b','c']
 let funcArr = []
 dataArr.forEach(v => funcArr.push(() => {console.log(v)}))
+funcArr.push(() => addToSequenceChain(sequence, Promise.all(arr.map(v => console.log(v)))))
 console.log(funcArr)
 addToSequenceChain(sequence, Promise.all(funcArr.map(func => func())))
